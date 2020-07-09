@@ -11,6 +11,7 @@ jobs:
           steps:
             - run: node --version
             - run: npm --version
+            - run: npm run deploy-storybook -- --ci
 workflows:
     build-and-test:
       jobs:
