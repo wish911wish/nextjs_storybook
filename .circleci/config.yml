@@ -10,8 +10,12 @@ jobs:
       - node/with-cache:
           steps:
             - run: npm install
-            - run: npm run deploy-storybook -- --ci --out=.docs
+            - run: npm run deploy-storybook -- --ci
 workflows:
     build-and-test:
       jobs:
         - build-and-test
+          filters:
+            branches:
+              only:
+                - develop
